@@ -172,8 +172,6 @@ body {
 }
 
 
-/* Cada foto ocupa todo el cuadro */
-
 .foto-slide {
     min-width: 100%;
 
@@ -338,11 +336,20 @@ body {
     cursor: pointer;
 
     transition: 0.4s;
+
+    -webkit-tap-highlight-color: transparent;
+
+    user-select: none;
 }
 
 
 .sobre:hover {
     transform: translateY(-5px);
+}
+
+
+.sobre:active {
+    transform: scale(0.97);
 }
 
 
@@ -357,8 +364,8 @@ body {
     width: 0;
     height: 0;
 
-    border-left: 45% solid transparent;
-    border-right: 45% solid transparent;
+    border-left: 50% solid transparent;
+    border-right: 50% solid transparent;
 
     border-top: 90px solid #d5bea0;
 }
