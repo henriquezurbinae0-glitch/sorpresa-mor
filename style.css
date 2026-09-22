@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #eee4d5;
+    color: #59483d;
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 100vh;
+}
+
+
+.pagina {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/* =========================
+   INICIO
+========================= */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 25px;
+}
+
+
+.pequeno {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.7;
+}
+
+
+.inicio h1 {
+    font-size: 42px;
+    line-height: 1.05;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+.corazon {
+    font-size: 45px;
+    margin: 35px 0;
+
+    animation: latido 2s infinite;
+}
+
+
+.boton {
+    border: none;
+
+    background: #d7c3aa;
+    color: #59483d;
+
+    padding: 15px 65px;
+
+    border-radius: 30px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+
+.boton span {
+    font-size: 16px;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia {
+    padding: 70px 25px 100px;
+    text-align: center;
+}
+
+
+.fecha {
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+
+.historia h2 {
+    font-size: 34px;
+
+    line-height: 1.1;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    margin-bottom: 60px;
+}
+
+
+/* =========================
+   CUADROS DE FOTOS
+========================= */
+
+.foto-seccion {
+    width: 100%;
+    margin-bottom: 75px;
+}
+
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carrusel {
+    width: 100%;
+
+    display: flex;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+}
+
+
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Cada foto ocupa todo el cuadro */
+
+.foto-slide {
+    min-width: 100%;
+
+    width: 100%;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    scroll-snap-align: center;
+
+    padding: 10px;
+}
+
+
+/* =========================
+   POLAROID
+========================= */
+
+.polaroid {
+    width: 90%;
+
+    max-width: 370px;
+
+    background: #f8f4ed;
+
+    padding: 12px 12px 35px;
+
+    box-shadow:
+        0 12px 30px rgba(60, 40, 20, 0.12);
+
+    transform: rotate(-2deg);
+
+    transition: 0.3s;
+}
+
+
+.foto-slide:nth-child(even) .polaroid {
+    transform: rotate(2deg);
+}
+
+
+.polaroid.inclinado {
+    transform: rotate(2deg);
+}
+
+
+.foto-slide:nth-child(even) .polaroid.inclinado {
+    transform: rotate(-2deg);
+}
+
+
+/* =========================
+   IMÁGENES
+========================= */
+
+.polaroid img {
+    width: 100%;
+
+    display: block;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   PUNTOS
+========================= */
+
+.puntos {
+    margin-top: 18px;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+}
+
+
+.puntos span {
+    display: inline-block;
+}
+
+
+/* =========================
+   DECORACIÓN
+========================= */
+
+.decoracion {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FRASES
+========================= */
+
+.frase {
+    font-size: 25px;
+
+    font-style: italic;
+
+    line-height: 1.1;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   SEGUNDO CUADRO
+========================= */
+
+.segundo-cuadro {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   SEPARADOR
+========================= */
+
+.separador {
+    font-size: 40px;
+
+    margin: 50px 0;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.carta-preview {
+    margin-top: 50px;
+}
+
+
+.sobre {
+    position: relative;
+
+    width: 90%;
+
+    height: 180px;
+
+    margin: 35px auto;
+
+    background: #e5d1b4;
+
+    box-shadow:
+        0 12px 30px rgba(60, 40, 20, 0.12);
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+.sobre:hover {
+    transform: translateY(-5px);
+}
+
+
+/* TRIÁNGULO DEL SOBRE */
+
+.solapa {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 45% solid transparent;
+    border-right: 45% solid transparent;
+
+    border-top: 90px solid #d5bea0;
+}
+
+
+/* SELLO */
+
+.sello {
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    background: #8f3e38;
+
+    color: #f5dfca;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.abrir-texto {
+    font-size: 17px;
+
+    font-style: italic;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    margin-top: 50px;
+}
+
+
+.papel {
+    background: #f5ead9;
+
+    padding: 40px 30px;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 30px rgba(60, 40, 20, 0.1);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+
+.saludo {
+    font-size: 28px;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+
+.papel p {
+    margin-bottom: 22px;
+}
+
+
+.firma {
+    text-align: right;
+
+    margin-top: 40px;
+
+    font-style: italic;
+}
+
+
+.firma span {
+    font-size: 24px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    margin-top: 80px;
+
+    padding-bottom: 50px;
+}
+
+
+.final h2 {
+    margin-bottom: 25px;
+}
+
+
+.grande {
+    font-size: 65px;
+    margin: 20px;
+}
+
+
+.final-texto {
+    font-size: 20px;
+    font-style: italic;
+}
+
+
+/* =========================
+   OCULTO / ANIMACIONES
+========================= */
+
+.oculto {
+    display: none;
+}
+
+
+.aparecer {
+    animation: aparecer 1s ease forwards;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 380px) {
+
+    .inicio h1 {
+        font-size: 35px;
+    }
+
+
+    .historia h2 {
+        font-size: 29px;
+    }
+
+
+    .frase {
+        font-size: 22px;
+    }
+
+
+    .polaroid {
+        width: 92%;
+    }
+
+}
