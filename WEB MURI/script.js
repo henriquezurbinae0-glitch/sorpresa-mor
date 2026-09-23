@@ -1,4 +1,3 @@
-
 /* ========================= */
 /* CORAZÓN INICIAL */
 /* ========================= */
@@ -112,6 +111,34 @@ function iniciarCarga(e) {
             );
 
 
+            /* ========================= */
+            /* MOSTRAR AVISO DE MÚSICA */
+            /* ========================= */
+
+            const notificacionMusica =
+                document.getElementById(
+                    "notificacion-musica"
+                );
+
+
+            if (notificacionMusica) {
+
+                notificacionMusica.classList.add(
+                    "visible"
+                );
+
+
+                setTimeout(function() {
+
+                    notificacionMusica.classList.remove(
+                        "visible"
+                    );
+
+                }, 3000);
+
+            }
+
+
             /* Iniciar música */
 
             iniciarMusica();
@@ -208,35 +235,52 @@ boton.addEventListener(
 /* ========================= */
 /* ABRIR HISTORIA */
 /* ========================= */
+/* Ahora cada sección (título, fotos, sobre, final) */
+/* es independiente, así que se revelan todas juntas */
+/* usando la clase compartida ".historia-parte"      */
 
 function abrirHistoria() {
 
-    const historia =
-        document.getElementById(
-            "historia"
+    const partes =
+        document.querySelectorAll(
+            ".historia-parte"
         );
 
 
-    if (!historia) return;
+    if (!partes.length) return;
 
 
-    historia.classList.remove(
-        "oculto"
-    );
+    partes.forEach(function(parte) {
+
+        parte.classList.remove(
+            "oculto"
+        );
 
 
-    historia.classList.add(
-        "aparecer"
-    );
+        parte.classList.add(
+            "aparecer"
+        );
+
+    });
 
 
     setTimeout(function() {
 
-        historia.scrollIntoView({
+        const historia =
+            document.getElementById(
+                "historia"
+            );
 
-            behavior: "smooth"
 
-        });
+        if (historia) {
+
+            historia.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
 
     }, 100);
 
@@ -500,7 +544,7 @@ function iniciarMusica() {
 
             /*
                 Algunos navegadores pueden
-                bloquear la reproducción.
+                bloquear la reproducción automática.
             */
 
             console.log(
