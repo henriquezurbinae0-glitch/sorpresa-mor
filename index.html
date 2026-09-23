@@ -1,341 +1,616 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Para ti ❤️</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <main class="pagina">
+<main class="pagina">
+
+
+    <!-- =========================
+         INTRODUCCIÓN
+    ========================== -->
+
+    <section class="inicio">
+
+        <p class="pequeno">
+            FELIZ CUMPLEAÑOS MI AMOR
+        </p>
+
+
+        <h1>
+            Tengo algo<br>
+            preparado para ti...
+        </h1>
+
+
+        <div class="corazon">
+            ♡
+        </div>
+
+
+     
+<div class="abrir-corazon">
+    <button
+        type="button"
+        class="boton"
+        id="boton-corazon"
+    >
+        ♡
+    </button>
+
+    <div class="barra-carga">
+        <div id="progreso"></div>
+    </div>
+</div>
+
+
+
+    </section>
+
+
+
+    <!-- =========================
+         HISTORIA
+    ========================== -->
+
+    <section
+        id="historia"
+        class="historia oculto"
+    >
+
+        <p class="fecha">
+            Nuestra historia
+        </p>
+
+
+        <h2>
+            Algunos de mis<br>
+            momentos favoritos.
+        </h2>
+
+
 
         <!-- =========================
-             INTRODUCCIÓN
+             PRIMER CUADRO DE FOTOS
         ========================== -->
 
-        <section class="inicio">
+        <div class="foto-seccion">
 
-            <p class="pequeno">
-                PARA LA PERSONA QUE MÁS AMO
-            </p>
+            <div class="carrusel">
 
-            <h1>
-                Tengo algo<br>
-                preparado para ti...
-            </h1>
 
-            <div class="corazon">
-                ♡
+                <div class="foto-slide">
+
+                    <div class="polaroid">
+
+                        <img
+                            src="fotos/foto1.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="foto-slide">
+
+                    <div class="polaroid">
+
+                        <img
+                            src="fotos/foto2.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="foto-slide">
+
+                    <div class="polaroid">
+
+                        <img
+                            src="fotos/foto3.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <button class="boton" onclick="abrirHistoria()">
-                ABRIR <span>♡</span>
-            </button>
+
+            <div class="puntos">
+
+                <span>♡</span>
+                <span>♡</span>
+                <span>♡</span>
+
+            </div>
+
+
+            <p class="decoracion">
+                ♡
+            </p>
+
+
+            <p class="frase">
+                Hay momentos que quisiera<br>
+                guardar para siempre.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             SEGUNDO CUADRO
+        ========================== -->
+
+        <div class="foto-seccion segundo-cuadro">
+
+            <div class="carrusel">
+
+
+                <div class="foto-slide">
+
+                    <div class="polaroid inclinado">
+
+                        <img
+                            src="fotos/foto4.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="foto-slide">
+
+                    <div class="polaroid inclinado">
+
+                        <img
+                            src="fotos/foto5.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="foto-slide">
+
+                    <div class="polaroid inclinado">
+
+                        <img
+                            src="fotos/foto6.jpg"
+                            alt="Nuestro recuerdo"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="puntos">
+
+                <span>♡</span>
+                <span>♡</span>
+                <span>♡</span>
+
+            </div>
+
+
+            <p class="frase">
+                Y entre todos ellos,<br>
+                estás tú.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             SEPARADOR
+        ========================== -->
+
+        <div class="separador">
+            〰
+        </div>
+
+
+
+        <!-- =========================
+             SOBRE
+        ========================== -->
+
+        <section class="carta-preview">
+
+            <p class="pequeno">
+                HAY ALGO QUE QUIERO DECIRTE
+            </p>
+
+
+            <div
+                class="sobre"
+                onclick="abrirCarta()"
+            >
+
+                <div class="solapa"></div>
+
+                <div class="sello">
+                    ♡
+                </div>
+
+            </div>
+
+
+            <p class="abrir-texto">
+                Toca el sobre para abrirlo
+            </p>
 
         </section>
 
 
+
         <!-- =========================
-             HISTORIA
+             CARTA
         ========================== -->
 
-        <section id="historia" class="historia oculto">
+        <section
+            id="carta"
+            class="carta oculto"
+        >
 
-            <p class="fecha">
-                Nuestra historia
-            </p>
+            <div class="papel">
 
-            <h2>
-                Algunos de mis<br>
-                momentos favoritos.
-            </h2>
-
-
-            <!-- =========================
-                 PRIMER CUADRO DE FOTOS
-            ========================== -->
-
-            <div class="foto-seccion">
-
-                <div class="carrusel">
-
-                    <!-- FOTO 1 -->
-                    <div class="foto-slide">
-
-                        <div class="polaroid">
-
-                            <img
-                                src="fotos/foto1.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FOTO 2 -->
-                    <div class="foto-slide">
-
-                        <div class="polaroid">
-
-                            <img
-                                src="fotos/foto2.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FOTO 3 -->
-                    <div class="foto-slide">
-
-                        <div class="polaroid">
-
-                            <img
-                                src="fotos/foto3.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- INDICADORES -->
-                <div class="puntos">
-
-                    <span>♡</span>
-                    <span>♡</span>
-                    <span>♡</span>
-
-                </div>
-
-
-                <p class="decoracion">
-                    ♡
+                <p>
+                    Primero que nada feliz cumpleaños, espero este siendo un dia muy especial creo que personalmente ya te lo dije todo.
                 </p>
 
 
-                <p class="frase">
-                    Hay momentos que quisiera<br>
-                    guardar para siempre.
+                <p>
+                    Pero esta es la primera parte de tu regalo y que da indicio al segundo regalo, que espero que te guste mucho.
+                </p>
+
+
+                <p>
+                    Esto es más que un regalo por lo lindo que es, si no por el siginificado que tiene para mi.
+                    No se si algun dia nos casaremos, yo espero que si pero sera más adelante.
+                    Pero esto es para prometerte que quiero estar toda la vida contigo y que hare todo siempre para
+                    hacerte feliz, te amo con mi vida y espero que te guste.
+                </p>
+
+
+                <p class="firma">
+
+                    Con todo mi amor,<br>
+
+                    <span>
+                        EDU❤️
+                    </span>
+
                 </p>
 
             </div>
 
-
-            <!-- =========================
-                 SEGUNDO CUADRO DE FOTOS
-            ========================== -->
-
-            <div class="foto-seccion segundo-cuadro">
-
-                <div class="carrusel">
-
-                    <!-- FOTO 4 -->
-                    <div class="foto-slide">
-
-                        <div class="polaroid inclinado">
-
-                            <img
-                                src="fotos/foto4.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
+        </section>
 
 
-                    <!-- FOTO 5 -->
-                    <div class="foto-slide">
 
-                        <div class="polaroid inclinado">
+        <!-- =========================
+             FINAL
+        ========================== -->
 
-                            <img
-                                src="fotos/foto5.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FOTO 6 -->
-                    <div class="foto-slide">
-
-                        <div class="polaroid inclinado">
-
-                            <img
-                                src="fotos/foto6.jpg"
-                                alt="Nuestro recuerdo"
-                            >
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- INDICADORES -->
-                <div class="puntos">
-
-                    <span>♡</span>
-                    <span>♡</span>
-                    <span>♡</span>
-
-                </div>
-
-
-                <p class="frase">
-                    Y entre todos ellos,<br>
-                    estás tú.
-                </p>
-
-            </div>
-
-
-            <!-- =========================
-                 SEPARADOR
-            ========================== -->
+        <section class="final">
 
             <div class="separador">
                 〰
             </div>
 
 
-            <!-- =========================
-                 SOBRE
-            ========================== -->
-
-            <section class="carta-preview">
-
-                <p class="pequeno">
-                    HAY ALGO QUE QUIERO DECIRTE
-                </p>
+            <p class="pequeno">
+                Y TODAVÍA ME FALTA DECIRTE ALGO
+            </p>
 
 
-                <div
-                    class="sobre"
-                    onclick="abrirCarta()"
-                >
-
-                    <div class="solapa"></div>
+            <h2>
+                Quiero seguir<br>
+                escribiendo nuestra historia.
+            </h2>
 
 
-                    <div class="sello">
-                        ♡
-                    </div>
-
-                </div>
+            <div class="corazon grande">
+                ♡
+            </div>
 
 
-                <p class="abrir-texto">
-                    Toca el sobre para abrirlo
-                </p>
-
-            </section>
-
-
-            <!-- =========================
-                 CARTA
-            ========================== -->
-
-            <section
-                id="carta"
-                class="carta oculto"
-            >
-
-                <div class="papel">
-                        Primero que nada feliz cumpleaños, espero este siendo un dia muy especial creo que personalmente ya te lo dije todo.
-                    </p>
-
-
-                    <p>
-                        Pero esta es la primera parte de tu regalo y que da indicio al segundo regalo, que espero que te guste mucho
-
-                        
-                    </p>
-
-
-                    <p>
-                        Esto es más que un regalo por lo lindo que es, si no por el siginificado que tiene para mi
-                        No se si algun dia nos casaremos, yo espero que si pero sera más adelante.
-                        Pero esto es para prometerte que quiero estar toda la vida contigo y que hare todo siempre para 
-                        hacerte feliz, te amo con mi vida y espero que te guste. 
-        
-                    </p>
-
-
-                    <p class="firma">
-
-                        Con todo mi amor,<br>
-
-                        <span>
-                            EDU❤️
-                        </span>
-
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
-                 FINAL
-            ========================== -->
-
-            <section class="final">
-
-                <div class="separador">
-                    〰
-                </div>
-
-
-                <p class="pequeno">
-                    Y TODAVÍA ME FALTA DECIRTE ALGO
-                </p>
-
-
-                <h2>
-                    Quiero seguir<br>
-                    escribiendo nuestra historia.
-                </h2>
-
-
-                <div class="corazon grande">
-                    ♡
-                </div>
-
-
-                <p class="final-texto">
-                    Siempre contigo.
-                </p>
-
-            </section>
+            <p class="final-texto">
+                Siempre contigo.
+            </p>
 
         </section>
 
-    </main>
+    </section>
+
+</main>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
 
-    <script src="script.js"></script>
+<!-- =========================
+     FUNCIONES
+========================== -->
+
+<script>
+
+let temporizador = null;
+
+let porcentaje = 0;
+
+let intervalo = null;
+
+const DURACION = 2000;
+
+
+
+// ==========================================
+// MANTENER PRESIONADO
+// ==========================================
+
+function iniciarCarga() {
+
+    if (temporizador !== null) {
+        return;
+    }
+
+
+    const barra = document.getElementById("progreso");
+
+
+    porcentaje = 0;
+
+    barra.style.width = "0%";
+
+
+    const inicio = Date.now();
+
+
+    // Temporizador que abre la página
+    temporizador = setTimeout(function() {
+
+        barra.style.width = "100%";
+
+        abrirHistoria();
+
+        limpiarCarga();
+
+    }, DURACION);
+
+
+
+    // Animación de la barra
+    intervalo = setInterval(function() {
+
+        const pasado = Date.now() - inicio;
+
+        porcentaje = Math.min(
+            (pasado / DURACION) * 100,
+            100
+        );
+
+        barra.style.width = porcentaje + "%";
+
+
+    }, 20);
+
+}
+
+
+
+// ==========================================
+// SOLTAR ANTES DE TIEMPO
+// ==========================================
+
+function cancelarCarga() {
+
+    if (temporizador === null) {
+        return;
+    }
+
+
+    clearTimeout(temporizador);
+
+    clearInterval(intervalo);
+
+
+    temporizador = null;
+
+    intervalo = null;
+
+
+    porcentaje = 0;
+
+
+    document.getElementById("progreso").style.width = "0%";
+
+}
+
+
+
+// ==========================================
+// LIMPIAR
+// ==========================================
+
+function limpiarCarga() {
+
+    clearTimeout(temporizador);
+
+    clearInterval(intervalo);
+
+    temporizador = null;
+
+    intervalo = null;
+
+}
+
+
+
+// ==========================================
+// ABRIR HISTORIA
+// ==========================================
+
+function abrirHistoria() {
+
+    const historia =
+        document.getElementById("historia");
+
+
+    historia.classList.remove("oculto");
+
+    historia.classList.add("aparecer");
+
+
+    setTimeout(function() {
+
+        historia.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 100);
+
+}
+
+
+
+// ==========================================
+// ABRIR CARTA
+// ==========================================
+
+function abrirCarta() {
+
+    const carta =
+        document.getElementById("carta");
+
+
+    carta.classList.remove("oculto");
+
+    carta.classList.add("aparecer");
+
+
+    setTimeout(function() {
+
+        carta.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }, 100);
+
+}
+
+
+
+// ==========================================
+// EVENTOS DEL BOTÓN
+// ==========================================
+
+const boton =
+    document.getElementById("boton-corazon");
+
+
+// MOUSE
+
+boton.addEventListener(
+    "mousedown",
+    function(evento) {
+
+        evento.preventDefault();
+
+        iniciarCarga();
+
+    }
+);
+
+
+boton.addEventListener(
+    "mouseup",
+    function() {
+
+        cancelarCarga();
+
+    }
+);
+
+
+boton.addEventListener(
+    "mouseleave",
+    function() {
+
+        cancelarCarga();
+
+    }
+);
+
+
+
+// CELULAR
+
+boton.addEventListener(
+    "touchstart",
+    function(evento) {
+
+        evento.preventDefault();
+
+        iniciarCarga();
+
+    },
+    { passive: false }
+);
+
+
+boton.addEventListener(
+    "touchend",
+    function(evento) {
+
+        evento.preventDefault();
+
+        cancelarCarga();
+
+    },
+    { passive: false }
+);
+
+</script>
+
 
 </body>
+
 </html>
+```
