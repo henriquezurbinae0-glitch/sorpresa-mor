@@ -1,11 +1,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
 
+
+/* ========================= */
+/* GENERAL */
+/* ========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     background: #eee4d5;
@@ -14,6 +20,7 @@ body {
     min-height: 100vh;
 }
 
+
 .pagina {
     width: 100%;
     max-width: 520px;
@@ -21,391 +28,1069 @@ body {
     overflow: hidden;
 }
 
+
+/* ========================= */
 /* INICIO */
+/* ========================= */
+
 .inicio {
+
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     padding: 40px 25px;
+
 }
+
 
 .pequeno {
+
     font-family: 'Montserrat', sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 3px;
+
     margin-bottom: 25px;
+
     opacity: 0.7;
+
 }
+
 
 .inicio h1 {
+
     font-size: 42px;
+
     line-height: 1.05;
+
     font-weight: 400;
+
     font-style: italic;
+
 }
+
 
 .corazon {
+
     font-size: 45px;
+
     margin: 35px 0;
+
     animation: latido 2s infinite;
+
 }
 
+
+/* ========================= */
 /* CORAZÓN PARA ABRIR */
+/* ========================= */
+
 .abrir-corazon {
+
     width: 100%;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
 }
+
 
 #boton-corazon {
+
     border: none;
+
     background: transparent;
+
     color: #8f3e38;
+
     font-family: 'Cormorant Garamond', serif;
-    font-size: 85px;
+
+    font-size: 92px;
+
     line-height: 1;
+
     padding: 5px 20px;
+
     cursor: pointer;
+
     user-select: none;
+
     -webkit-user-select: none;
+
     -webkit-tap-highlight-color: transparent;
+
     touch-action: none;
-    transition: transform 0.2s ease;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+
 }
+
 
 #boton-corazon:hover {
-    transform: scale(1.1);
+
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(143, 62, 56, 0.25)
+        );
+
 }
+
 
 #boton-corazon:active {
-    transform: scale(0.9);
+
+    transform: scale(0.95);
+
 }
+
 
 #boton-corazon.manteniendo {
-    animation: corazonPresionado 0.7s infinite;
+
+    animation:
+        corazonPresionado 0.65s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 14px rgba(143, 62, 56, 0.35)
+        );
+
 }
 
+
+#instruccion-corazon {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-top: -3px;
+
+    margin-bottom: 2px;
+
+    opacity: 0.6;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+#instruccion-corazon.manteniendo {
+
+    opacity: 0.9;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ========================= */
+/* ANIMACIÓN CORAZÓN */
+/* ========================= */
+
 @keyframes corazonPresionado {
+
     0%, 100% {
+
         transform: scale(1);
+
     }
 
     50% {
-        transform: scale(1.18);
+
+        transform: scale(1.17);
+
     }
+
 }
 
+
+/* ========================= */
 /* BARRA DE CARGA */
+/* ========================= */
+
 .barra-carga {
+
+    position: relative;
+
     width: 180px;
-    height: 4px;
-    background: rgba(89, 72, 61, 0.15);
-    border-radius: 10px;
-    margin-top: 18px;
+
+    height: 22px;
+
+    background:
+        rgba(89, 72, 61, 0.15);
+
+    border-radius: 20px;
+
+    margin-top: 14px;
+
     overflow: hidden;
+
+    box-shadow:
+        inset 0 1px 3px rgba(60, 40, 20, 0.08);
+
 }
+
 
 #progreso {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
     width: 0%;
+
     height: 100%;
+
     background: #8f3e38;
-    border-radius: 10px;
-    transition: width 0.05s linear;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.05s linear;
+
 }
 
-/* HISTORIA */
-.historia {
-    padding: 70px 25px 100px;
-    text-align: center;
+
+#porcentaje {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #59483d;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
 }
+
+
+/* ========================= */
+/* HISTORIA */
+/* ========================= */
+
+.historia {
+
+    padding: 70px 25px 100px;
+
+    text-align: center;
+
+}
+
 
 .fecha {
+
     font-size: 15px;
+
     font-style: italic;
+
     opacity: 0.7;
+
     margin-bottom: 20px;
+
 }
+
 
 .historia h2 {
+
     font-size: 34px;
+
     line-height: 1.1;
+
     font-weight: 400;
+
     font-style: italic;
+
     margin-bottom: 60px;
+
 }
 
-/* CUADROS DE FOTOS */
+
+/* ========================= */
+/* FOTOS */
+/* ========================= */
+
 .foto-seccion {
+
     width: 100%;
+
     margin-bottom: 75px;
+
 }
 
-/* CARRUSEL */
+
 .carrusel {
+
     width: 100%;
+
     display: flex;
+
     overflow-x: auto;
+
     scroll-snap-type: x mandatory;
+
     scroll-behavior: smooth;
+
     -webkit-overflow-scrolling: touch;
+
     scrollbar-width: none;
+
     overscroll-behavior-x: contain;
+
 }
+
 
 .carrusel::-webkit-scrollbar {
+
     display: none;
+
 }
+
 
 .foto-slide {
+
     min-width: 100%;
+
     width: 100%;
+
     flex-shrink: 0;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     scroll-snap-align: center;
+
     padding: 10px;
+
 }
 
+
+/* ========================= */
 /* POLAROID */
+/* ========================= */
+
 .polaroid {
+
     width: 90%;
+
     max-width: 370px;
+
     background: #f8f4ed;
+
     padding: 12px 12px 35px;
+
     box-shadow:
         0 12px 30px rgba(60, 40, 20, 0.12);
+
     transform: rotate(-2deg);
-    transition: 0.3s;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+
 }
+
 
 .foto-slide:nth-child(even) .polaroid {
+
     transform: rotate(2deg);
+
 }
+
 
 .polaroid.inclinado {
+
     transform: rotate(2deg);
+
 }
+
 
 .foto-slide:nth-child(even) .polaroid.inclinado {
+
     transform: rotate(-2deg);
+
 }
 
-/* IMÁGENES */
+
+.foto-slide.foto-activa .polaroid {
+
+    box-shadow:
+        0 16px 35px rgba(60, 40, 20, 0.16);
+
+}
+
+
+.foto-slide.foto-activa img {
+
+    transform: scale(1.015);
+
+}
+
+
 .polaroid img {
+
     width: 100%;
+
     display: block;
+
     aspect-ratio: 1 / 1;
+
     object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+
 }
 
+
+/* ========================= */
 /* PUNTOS */
+/* ========================= */
+
 .puntos {
+
     margin-top: 18px;
+
     letter-spacing: 5px;
+
     font-size: 13px;
+
     opacity: 0.7;
+
 }
+
 
 .puntos span {
+
     display: inline-block;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+    opacity: 0.45;
+
+    cursor: pointer;
+
 }
 
+
+.puntos span.activo {
+
+    opacity: 1;
+
+    transform: scale(1.25);
+
+}
+
+
+/* ========================= */
 /* DECORACIÓN */
+/* ========================= */
+
 .decoracion {
+
     font-size: 28px;
+
     margin-top: 20px;
+
 }
 
+
+/* ========================= */
 /* FRASES */
+/* ========================= */
+
 .frase {
+
     font-size: 25px;
+
     font-style: italic;
+
     line-height: 1.1;
+
     margin-top: 25px;
+
 }
 
+
+/* ========================= */
 /* SEGUNDO CUADRO */
+/* ========================= */
+
 .segundo-cuadro {
+
     margin-top: 20px;
+
 }
 
+
+/* ========================= */
 /* SEPARADOR */
+/* ========================= */
+
 .separador {
+
     font-size: 40px;
+
     margin: 50px 0;
+
     opacity: 0.6;
+
 }
 
+
+/* ========================= */
 /* SOBRE */
+/* ========================= */
+
 .carta-preview {
+
     margin-top: 50px;
+
 }
+
 
 .sobre {
+
     position: relative;
+
     width: 90%;
+
     height: 180px;
+
     margin: 35px auto;
+
     background: #e5d1b4;
+
     box-shadow:
         0 12px 30px rgba(60, 40, 20, 0.12);
+
     cursor: pointer;
-    transition: 0.4s;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
     -webkit-tap-highlight-color: transparent;
+
     user-select: none;
+
+    overflow: hidden;
+
 }
+
 
 .sobre:hover {
+
     transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 35px rgba(60, 40, 20, 0.15);
+
 }
+
 
 .sobre:active {
-    transform: scale(0.97);
+
+    transform: scale(0.98);
+
 }
 
-/* TRIÁNGULO DEL SOBRE */
+
+.sobre.abierto {
+
+    transform: translateY(-3px);
+
+}
+
+
+.sobre.abierto .sello {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.85);
+
+    opacity: 0;
+
+}
+
+
+.sobre.abierto .solapa {
+
+    transform:
+        rotateX(180deg);
+
+    transform-origin: top center;
+
+}
+
+
+.sobre.abierto + .abrir-texto {
+
+    opacity: 0;
+
+}
+
+
+/* ========================= */
+/* SOLAPA */
+/* ========================= */
+
 .solapa {
+
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     width: 0;
+
     height: 0;
+
     border-left: 50% solid transparent;
+
     border-right: 50% solid transparent;
+
     border-top: 90px solid #d5bea0;
+
+    transition:
+        transform 0.65s ease;
+
+    transform-origin: top center;
+
+    z-index: 2;
+
 }
 
+
+/* ========================= */
 /* SELLO */
+/* ========================= */
+
 .sello {
+
     position: absolute;
+
     width: 60px;
+
     height: 60px;
+
     border-radius: 50%;
+
     background: #8f3e38;
+
     color: #f5dfca;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 28px;
+
     left: 50%;
+
     top: 50%;
-    transform: translate(-50%, -50%);
+
+    transform:
+        translate(-50%, -50%);
+
     box-shadow:
         0 5px 12px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.35s ease;
+
 }
+
 
 .abrir-texto {
+
     font-size: 17px;
+
     font-style: italic;
+
     opacity: 0.7;
+
+    transition:
+        opacity 0.3s ease;
+
 }
 
+
+/* ========================= */
 /* CARTA */
+/* ========================= */
+
 .carta {
+
     margin-top: 50px;
+
 }
+
 
 .papel {
+
     background: #f5ead9;
+
     padding: 40px 30px;
+
     text-align: left;
+
     box-shadow:
         0 10px 30px rgba(60, 40, 20, 0.1);
+
     font-size: 20px;
+
     line-height: 1.5;
+
 }
 
-.saludo {
-    font-size: 28px;
-    font-style: italic;
-    margin-bottom: 25px;
-}
 
 .papel p {
+
     margin-bottom: 22px;
+
 }
+
 
 .firma {
+
     text-align: right;
+
     margin-top: 40px;
+
     font-style: italic;
+
 }
+
 
 .firma span {
+
     font-size: 24px;
+
 }
 
+
+/* ========================= */
 /* FINAL */
+/* ========================= */
+
 .final {
+
     margin-top: 80px;
+
     padding-bottom: 50px;
+
 }
+
 
 .final h2 {
+
     margin-bottom: 25px;
+
 }
+
 
 .grande {
+
     font-size: 65px;
+
     margin: 20px;
+
+    animation:
+        latidoFinal 2.5s infinite;
+
 }
+
 
 .final-texto {
+
     font-size: 20px;
+
     font-style: italic;
+
 }
 
+
+/* ========================= */
 /* OCULTO / ANIMACIONES */
+/* ========================= */
+
 .oculto {
+
     display: none;
+
 }
+
 
 .aparecer {
-    animation: aparecer 1s ease forwards;
+
+    animation:
+        aparecer 1s ease forwards;
+
 }
 
+
 @keyframes aparecer {
+
     from {
+
         opacity: 0;
-        transform: translateY(25px);
+
+        transform:
+            translateY(25px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
+
 }
 
+
 @keyframes latido {
+
     0%, 100% {
+
         transform: scale(1);
+
     }
 
     50% {
+
         transform: scale(1.12);
+
     }
+
 }
 
-/* CELULARES PEQUEÑOS */
-@media (max-width: 380px) {
-    .inicio h1 {
-        font-size: 35px;
+
+@keyframes latidoFinal {
+
+    0%, 100% {
+
+        transform: scale(1);
+
     }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+
+/* ========================= */
+/* MÚSICA */
+/* ========================= */
+
+#boton-musica {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(229, 209, 180, 0.92);
+
+    color: #8f3e38;
+
+    font-family:
+        'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(60, 40, 20, 0.12);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        background 0.3s ease;
+
+    z-index: 100;
+
+}
+
+
+#boton-musica.visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+
+}
+
+
+#boton-musica:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+#boton-musica.reproduciendo {
+
+    animation:
+        musicaLatido 1.5s infinite;
+
+}
+
+
+@keyframes musicaLatido {
+
+    0%, 100% {
+
+        box-shadow:
+            0 5px 15px rgba(60, 40, 20, 0.12);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 5px 20px rgba(143, 62, 56, 0.28);
+
+    }
+
+}
+
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+@media (max-width: 380px) {
+
+    .inicio h1 {
+
+        font-size: 35px;
+
+    }
+
 
     .historia h2 {
+
         font-size: 29px;
+
     }
+
 
     .frase {
+
         font-size: 22px;
+
     }
 
+
     .polaroid {
+
         width: 92%;
+
     }
+
+
+    #boton-corazon {
+
+        font-size: 85px;
+
+    }
+
+
+    .barra-carga {
+
+        width: 170px;
+
+    }
+
+
+    #boton-musica {
+
+        right: 14px;
+
+        bottom: 14px;
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
 }
